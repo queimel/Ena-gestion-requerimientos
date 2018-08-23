@@ -5,34 +5,74 @@
  */
 package gestionrequerimientos;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 /**
  *
  * @author cristian.campos
  */
 public class Login {
-    String usuario;
-    String clave;
+    private String _usuario;
+    private String _clave;
     private BaseDatos miBD = new BaseDatos();
-    boolean logIn = false;
-    String consulta = "SELECT * FROM USUARIOS WHERE nickname ="+usuario;
+    boolean _logIn = false;
+    
 
     public Login(String usuario, String clave) {
-        this.usuario = usuario;
-        this.clave = clave;
+        this._usuario = usuario;
+        this._clave = clave;
     }
  
     public void consultaLogin(){
         try{
-            System.out.println("hola sql");
+            
             if(miBD.conectarBD()){
-                ResultSet rstUsers =  miBD.consultaSQL(consulta);
+                String consultaUser = "SELECT * FROM Usuario WHERE nombre ='"+this._usuario+"';";
                 
-                if( rstUsers.getString(1).equalsIgnoreCase(usuario)){
-                   
+                ResultSet rsUser =  miBD.consultaSQL(consultaUser);
+
+                if(rsUser.next()){
+                    System.out.println(this._clave);
+                    if(rsUser.getString(2).equals(this._usuario)){
+                        String consultaPass = "SELECT * FROM Usuario WHERE nombre ='"+this._usuario+"' AND passs ='"+this._clave+"';";
+                        ResultSet rsPass =  miBD.consultaSQL(consultaPass);
+                        if(rsPass.next()){
+                            if(rsPass.getString(3).equals(this._clave)){
+                               this.setLogIn(true);
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Password incorrecto!");
+                        }                   
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "usuario no encontrado!"); 
                 }
             }
         }catch(Exception ex){
             System.out.println(ex.toString());
         }     
+    }
+
+    public void setUsuario(String _usuario) {
+        this._usuario = _usuario;
+    }
+
+    public void setClave(String _clave) {
+        this._clave = _clave;
+    }
+
+    public void setLogIn(boolean _logIn) {
+        this._logIn = _logIn;
+    }
+
+    public String getUsuario() {
+        return _usuario;
+    }
+
+    public String getClave() {
+        return _clave;
+    }
+
+    public boolean isLogIn() {
+        return _logIn;
     }
 }

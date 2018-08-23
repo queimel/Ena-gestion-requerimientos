@@ -27,8 +27,8 @@ public class BaseDatos {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             //Establecer conexion
-            String baseDatos = "jdbc:mysql://localhost:3306/Requerimientos";
-            cnn = DriverManager.getConnection(baseDatos, "root", "Queimel056200");
+            String baseDatos = "jdbc:mysql://localhost:8889/Requerimiento";
+            cnn = DriverManager.getConnection(baseDatos, "root", "root");
            
             if(cnn != null)
                 return true;
