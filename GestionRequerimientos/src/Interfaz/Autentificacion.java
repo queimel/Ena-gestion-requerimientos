@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Interfaz;
+import gestionrequerimientos.Login;
 
 /**
  *
@@ -55,7 +56,7 @@ public class Autentificacion extends javax.swing.JFrame {
         jCheckBox1.setText("Recordar");
         jCheckBox1.setName("cb_recordar"); // NOI18N
 
-        jButton1.setText("Ingresar");
+        jButton1.setText("jButton1");
         jButton1.setName("btn_ingresar"); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,9 +107,9 @@ public class Autentificacion extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,6 +117,12 @@ public class Autentificacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String user = jTextField1.getText();
+        String pass = jPasswordField1.getPassword().toString();
+        
+        Login autentificacion = new Login(user, pass);
+        autentificacion.consultaLogin();
+        System.out.println("hola");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

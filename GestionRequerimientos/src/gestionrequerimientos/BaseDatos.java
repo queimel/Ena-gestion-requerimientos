@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaz;
+package gestionrequerimientos;
 
 //import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.sql.Connection;
@@ -36,7 +36,9 @@ public class BaseDatos {
                 return false;
            
         } catch (Exception e) {
+            System.out.println(e.toString());
             return false;
+            
         }
     }
     
@@ -47,5 +49,18 @@ public class BaseDatos {
         } catch (SQLException ex) {
             Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public ResultSet consultaSQL(String sql){
+        ResultSet rstConsulta = null;
+        Statement stm;
+        try {
+            stm = cnn.createStatement();
+            rstConsulta = stm.executeQuery(sql); 
+        } catch (SQLException ex) {
+            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }     
+        
+        return rstConsulta;
     }
 }

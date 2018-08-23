@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gestionrequerimientos;
+import Interfaz.Autentificacion;
 
 /**
  *
@@ -15,7 +16,8 @@ public class GestionRequerimientos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Autentificacion admin = new Autentificacion();
+        admin.setVisible(true);
     }
     
 }
