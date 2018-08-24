@@ -56,7 +56,7 @@ public class Autentificacion extends javax.swing.JFrame {
         jCheckBox1.setText("Recordar");
         jCheckBox1.setName("cb_recordar"); // NOI18N
 
-        btn_ingresar.setText("jButton1");
+        btn_ingresar.setText("Ingresar");
         btn_ingresar.setName("btn_ingresar"); // NOI18N
         btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,13 +123,11 @@ public class Autentificacion extends javax.swing.JFrame {
         
         Login autentificacion = new Login(user, pass);
         autentificacion.consultaLogin();
-        //System.out.println(autentificacion.isLogIn());
         if(autentificacion.isLogIn()){
             Menu Inicio = new Menu();
             Inicio.setVisible(true);
             dispose();
         }
-        
     }//GEN-LAST:event_btn_ingresarActionPerformed
 
     /**

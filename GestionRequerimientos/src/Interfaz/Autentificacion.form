@@ -125,7 +125,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_ingresar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Ingresar"/>
         <Property name="name" type="java.lang.String" value="btn_ingresar" noResource="true"/>
       </Properties>
       <Events>

@@ -39,10 +39,25 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText("Menú Principal");
 
         btn_cerrar.setText("Cerrar Requerimiento");
+        btn_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cerrarMouseClicked(evt);
+            }
+        });
 
         btn_ingresar.setText("Ingresar Requerimiento");
+        btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ingresarMouseClicked(evt);
+            }
+        });
 
         btn_consultar1.setText("Consultar Requerimiento");
+        btn_consultar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_consultar1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,7 +69,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_consultar1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,11 +92,29 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btn_consultar1)
                 .addGap(18, 18, 18)
                 .addComponent(btn_cerrar)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
+        IngresarReq panelIngresar = new IngresarReq();
+        panelIngresar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_ingresarMouseClicked
+
+    private void btn_consultar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_consultar1MouseClicked
+        ConsultarReq panelConsultar = new ConsultarReq();
+        panelConsultar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_consultar1MouseClicked
+
+    private void btn_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseClicked
+        CerrarReq panelCerrar = new CerrarReq();
+        panelCerrar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_cerrarMouseClicked
 
     /**
      * @param args the command line arguments

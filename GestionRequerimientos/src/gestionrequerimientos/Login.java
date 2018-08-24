@@ -38,6 +38,7 @@ public class Login {
                         if(rsPass.next()){
                             if(rsPass.getString(3).equals(this._clave)){
                                this.setLogIn(true);
+                               miBD.cerrarConexion();
                             }
                         }else{
                             JOptionPane.showMessageDialog(null, "Password incorrecto!");

@@ -30,7 +30,7 @@
                   <Component id="btn_consultar1" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
                   <Component id="btn_cerrar" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -58,7 +58,7 @@
               <Component id="btn_consultar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btn_cerrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,16 +78,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cerrar Requerimiento"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_cerrarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_ingresar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresar Requerimiento"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_consultar1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Requerimiento"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_consultar1MouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
